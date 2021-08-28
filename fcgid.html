@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Re: FCGID et wwsympa -&gt; j&#39;ai compris !</title>
+<link rel="important stylesheet" href="chrome://messenger/skin/messageBody.css">
+</head>
+<body>
+<table border=0 cellspacing=0 cellpadding=0 width="100%" class="header-part1"><tr><td><b>Sujet: </b>Re: FCGID et wwsympa -> j'ai compris !</td></tr><tr><td><b>De: </b>Olivier Salaün - CRU <olivier.salaun@cru.fr></td></tr><tr><td><b>Date: </b>Wed, 20 Dec 2006 11:27:54 +0100</td></tr></table><table border=0 cellspacing=0 cellpadding=0 width="100%" class="header-part2"><tr><td><b>Pour: </b>Benoit Lathiere (<A href="mailto:benoit.lathiere@free.fr">benoit.lathiere@free.fr</A>)></td></tr><tr><td><b>Copie: </b>sympa-authors@cru.fr</td></tr></table><br>
+<div class="moz-text-flowed">Merci pour ces infos ; nous allons tester ce module.
+<br>
+<br>Il existe une autre alternative : mod_proxy_fcgi. 
+<a class="moz-txt-link-freetext" href="http://mproxyfcgi.sourceforge.net/">http://mproxyfcgi.sourceforge.net/</a>
+<br>Ce module doit être intégré directement au projet Apache, v2.3.
+<br>
+<br>Benoit Lathiere wrote:
+<br><blockquote type=cite>Le module en question est celui dont je vous avais parlé il y a 
+quelques mois.
+<br>Site officiel : <a class="moz-txt-link-freetext" href="http://fastcgi.coremail.cn/">http://fastcgi.coremail.cn/</a> (doc en ligne très succinte)
+<br>Le module s'appelle bien FcgiD.
+<br>Le package Debian est libapache2-mod-fcgid (Apache2 uniquement). Il 
+est maintenant disponible pour toutes les architectures.
+<br>Le package Fastcgi existe toujours chez Debian -non-free), même en 
+unstable. Mais je ne sais pas pour combien de temps.
+<br>
+<br>Mon contexte : Debian Sarge, Apache 2 (stable), Sympa4.1.5 (stable), 
+Fcgid (stable)
+<br>
+<br>Fcgid est un peu plus simple à configurer que Fastcgi. Les directives 
+nécessaires sont différentes et moins nombreuses pour faire tourner 
+wwsympa.fcgi.
+<br>En plus d'activer /etc/apache2/mods-enabled/fcgid.*, j'ai légèrement 
+modifié votre fichier httpd.conf-fcgi :
+<br>--------------------------
+<br># Apache configuration file for Sympa
+<br>Alias /icons/sympa /usr/share/sympa/icons
+<br>##&lt;IfModule mod_fcgid.c&gt;
+<br>##AddHandler fcgid-script .fcg .fcgi .fpl
+<br>##FastCgiServer /usr/lib/cgi-bin/sympa/wwsympa.fcgi -processes 2
+<br>ScriptAlias /wws /usr/lib/cgi-bin/sympa/wwsympa.fcgi
+<br>&lt;Location /wws&gt;
+<br>&nbsp;&nbsp; SetHandler fcgid-script
+<br>&nbsp;&nbsp; Options ExecCGI
+<br>&lt;/Location&gt;
+<br>##&lt;/IfModule&gt;
+<br>---------------------------
+<br>
+<br>"FastCgiServer" n'existe plus.
+<br>Je n'ai pas encore testé wwsympa de fond en comble pour dire si c'est 
+stable. Je vais tester une migration sous peu.
+<br>
+<br>
+<br>Je reste à votre disposition pour de plus amples détails.
+<br></blockquote>
+<br></div></body>
+</html>
