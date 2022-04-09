@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Benoît Lathière Blog</title>
+        <link>https://benoitlathiere.github.io/blog</link>
+        <description>Benoît Lathière Blog</description>
+        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>fr</language>
+        <copyright>Copyright © 2022 Facebook, Inc.</copyright>
+        <item>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://benoitlathiere.github.io/blog/welcome</link>
+            <guid>welcome</guid>
+            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
+            <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p><p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p><p>Regular blog authors can be added to <code>authors.yml</code>.</p><p>The blog post date can be extracted from filenames, such as:</p><ul><li><code>2019-05-30-welcome.md</code></li><li><code>2019-05-30-welcome/index.md</code></li></ul><p>A blog post folder can be convenient to co-locate blog post images:</p><p><img loading="lazy" alt="Docusaurus Plushie" src="/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_E7b_"></p><p>The blog supports tags as well!</p><p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
+            <category>hello</category>
+            <category>docusaurus</category>
+        </item>
+        <item>
+            <title><![CDATA[FCGID et wwsympa]]></title>
+            <link>https://benoitlathiere.github.io/blog/FCGID-wwsympa-post</link>
+            <guid>FCGID-wwsympa-post</guid>
+            <pubDate>Wed, 20 Dec 2006 00:00:00 GMT</pubDate>
+            <description><![CDATA[Ce message a été publié sur la liste de diffusion sympa-authors@cru.fr le 20 décembre 2006. Il explique la configuration pour activet FCGID dans Apache pour le logiciel Sympa.]]></description>
+            <content:encoded><![CDATA[<p>Ce message a été publié sur la liste de diffusion <a href="mailto:_sympa-authors@cru.fr_" target="_blank" rel="noopener noreferrer">_sympa-authors@cru.fr_</a> le 20 décembre 2006. Il explique la configuration pour activet FCGID dans Apache pour le logiciel Sympa.</p><p><strong>Sujet:</strong> Re: FCGID et wwsympa -&gt; j'ai compris !
+<strong>De:</strong> Olivier Salaün - CRU
+<strong>Date:</strong> Wed, 20 Dec 2006 11:27:54 +0100
+<strong>Pour:</strong> Benoit Lathiere
+<strong>Copie:</strong> <a href="mailto:sympa-authors@cru.fr" target="_blank" rel="noopener noreferrer">sympa-authors@cru.fr</a></p><p>Merci pour ces infos ; nous allons tester ce module.</p><p>Il existe une autre alternative : mod_proxy_fcgi. <a href="http://mproxyfcgi.sourceforge.net/" target="_blank" rel="noopener noreferrer">http://mproxyfcgi.sourceforge.net/</a>
+Ce module doit être intégré directement au projet Apache, v2.3.</p><p><em>Benoit Lathiere wrote:</em></p><p>Le module en question est celui dont je vous avais parlé il y a quelques mois.
+Site officiel : <a href="http://fastcgi.coremail.cn/" target="_blank" rel="noopener noreferrer">http://fastcgi.coremail.cn/</a> (doc en ligne très succinte)
+Le module s'appelle bien <em>FcgiD</em>.
+Le package Debian est <code>libapache2-mod-fcgid</code> (Apache2 uniquement). Il est maintenant disponible pour toutes les architectures.
+Le package Fastcgi existe toujours chez Debian (non-free), même en unstable. Mais je ne sais pas pour combien de temps.</p><p>Mon contexte : Debian Sarge, Apache 2 (stable), Sympa 4.1.5 (stable), Fcgid (stable).</p><p>Fcgid est un peu plus simple à configurer que Fastcgi. Les directives nécessaires sont différentes et moins nombreuses pour faire tourner wwsympa.fcgi.
+En plus d'activer <code>/etc/apache2/mods-enabled/fcgid.*</code>, j'ai légèrement modifié votre fichier httpd.conf-fcgi :</p><div class="codeBlockContainer_I0IT language-bash theme-code-block"><div class="codeBlockContent_wNvx" style="color:#393A34;background-color:#f6f8fa"><pre tabindex="0" class="prism-code language-bash codeBlock_jd64 thin-scrollbar"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic"># Apache configuration file for Sympa</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Alias /icons/sympa /usr/share/sympa/icons</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">##&lt;IfModule mod_fcgid.c&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">##AddHandler fcgid-script .fcg .fcgi .fpl</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">##FastCgiServer /usr/lib/cgi-bin/sympa/wwsympa.fcgi -processes 2</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    ScriptAlias /wws /usr/lib/cgi-bin/sympa/wwsympa.fcgi</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">Location /wws</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        SetHandler fcgid-script</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        Options ExecCGI</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">/Location</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">##&lt;/IfModule&gt;</span><br></span></code></pre><button type="button" aria-label="Copier le code" title="Copier" class="copyButton_eDfN clean-btn"><span class="copyButtonIcons_W9eQ" aria-hidden="true"><svg class="copyButtonIcon_XEyF" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_i9w9" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div><p>"FastCgiServer" n'existe plus.
+Je n'ai pas encore testé wwsympa de fond en comble pour dire si c'est stable. Je vais tester une migration sous peu.</p>]]></content:encoded>
+            <category>FCGID</category>
+            <category>wwsympa</category>
+            <category>Apache</category>
+        </item>
+    </channel>
+</rss>
