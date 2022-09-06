@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmadoc=self.webpackChunkmadoc||[]).push([[2426],{7538:a=>{a.exports=JSON.parse('{"label":"wwsympa","permalink":"/build/blog/tags/wwsympa","allTagsPath":"/build/blog/tags","count":1}')}}]);

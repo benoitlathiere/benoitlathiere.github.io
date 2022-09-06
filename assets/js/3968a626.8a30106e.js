@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmadoc=self.webpackChunkmadoc||[]).push([[3908],{9622:a=>{a.exports=JSON.parse('{"label":"glossaire","permalink":"/build/blog/tags/glossaire","allTagsPath":"/build/blog/tags","count":1}')}}]);
