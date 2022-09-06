@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Benoît Lathière Blog</title>
-        <link>https://benoitlathiere.github.io/blog</link>
+        <link>https://benoitlathiere.github.io/build/blog</link>
         <description>Benoît Lathière Blog</description>
         <lastBuildDate>Mon, 02 May 2022 20:25:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -11,7 +11,7 @@
         <copyright>Copyright © 2022</copyright>
         <item>
             <title><![CDATA[Le vocabulaire de la tech]]></title>
-            <link>https://benoitlathiere.github.io/blog/vocabulaire-de-la-tech</link>
+            <link>https://benoitlathiere.github.io/build/blog/vocabulaire-de-la-tech</link>
             <guid>vocabulaire-de-la-tech</guid>
             <pubDate>Mon, 02 May 2022 20:25:34 GMT</pubDate>
             <description><![CDATA[La tech, comme beaucoup de secteurs d'activité, a son propre vocabulaire. Si vous ne voulez pas être largué dans une conversation, voici un petit glossaire qui vous aidera.]]></description>
@@ -22,7 +22,7 @@
         </item>
         <item>
             <title><![CDATA[Découvrir Docusaurus pour faire un site statique]]></title>
-            <link>https://benoitlathiere.github.io/blog/decouvrir-docusaurus</link>
+            <link>https://benoitlathiere.github.io/build/blog/decouvrir-docusaurus</link>
             <guid>decouvrir-docusaurus</guid>
             <pubDate>Sun, 10 Apr 2022 19:05:48 GMT</pubDate>
             <description><![CDATA[Docusaurus est un framework développé par Facebook et qui permet de générer un site statique. Le Javascript moderne permet de nombreux modes de développement, et la génération de site statique (Static Site Generator, SSG) pour héberger les pages sur des serveurs sans moteur de script (ni PHP, ni Java, ...).]]></description>
@@ -34,7 +34,7 @@
         </item>
         <item>
             <title><![CDATA[Transpilation en Javascript]]></title>
-            <link>https://benoitlathiere.github.io/blog/transpilation-javascript</link>
+            <link>https://benoitlathiere.github.io/build/blog/transpilation-javascript</link>
             <guid>transpilation-javascript</guid>
             <pubDate>Mon, 04 Apr 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Vous connaissez déjà le langage Javascript, presque aussi vieux que le Web, mais récemment vous avez entendu parlé de compilation, ou plutôt de transpilation de Typescript ou JSX en Javascrip ! Qu'est-ce que c'est, et pourquoi fait-on ça ?]]></description>
@@ -45,7 +45,7 @@
         </item>
         <item>
             <title><![CDATA[FCGID et wwsympa]]></title>
-            <link>https://benoitlathiere.github.io/blog/FCGID-wwsympa-post</link>
+            <link>https://benoitlathiere.github.io/build/blog/FCGID-wwsympa-post</link>
             <guid>FCGID-wwsympa-post</guid>
             <pubDate>Wed, 20 Dec 2006 00:00:00 GMT</pubDate>
             <description><![CDATA[Ce message a été publié sur la liste de diffusion sympa-authors@cru.fr le 20 décembre 2006. Il explique la configuration pour activet FCGID dans Apache pour le logiciel Sympa.]]></description>

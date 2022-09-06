@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmadoc=self.webpackChunkmadoc||[]).push([[4121],{8070:e=>{e.exports=JSON.parse('[{"label":"Etherpad-Lite","permalink":"/build/docs/tags/etherpad-lite","count":1}]')}}]);

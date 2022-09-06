@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmadoc=self.webpackChunkmadoc||[]).push([[7367],{8813:a=>{a.exports=JSON.parse('{"label":"Static Site Generator","permalink":"/blog/tags/static-site-generator","allTagsPath":"/blog/tags","count":1}')}}]);
