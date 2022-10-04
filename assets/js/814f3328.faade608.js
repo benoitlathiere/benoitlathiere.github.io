@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmadoc=self.webpackChunkmadoc||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Tous les articles","items":[{"title":"D\xe9couvrir Docusaurus pour faire un site statique","permalink":"/blog/decouvrir-docusaurus"},{"title":"FCGID et wwsympa","permalink":"/blog/FCGID-wwsympa-post"}]}')}}]);
