@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmadoc=self.webpackChunkmadoc||[]).push([[2352],{1800:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/laravel","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog d\'un dev sur le retour","blogTitle":"dev Benoit Lathi\xe8re"}')}}]);
